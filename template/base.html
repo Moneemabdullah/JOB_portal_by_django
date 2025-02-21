@@ -1,0 +1,35 @@
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html>
+
+{% include 'head.html' %}
+
+<body id="top">
+      {% include 'header.html' %}
+      {% block content %}{% endblock %}
+      {% include 'footer.html' %}
+      {% include 'scripts.html' %}
+      {% block extra_scripts %} {% endblock %}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+      <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                  flatpickr("#datepicker", {
+                        dateFormat: "Y-m-d",  // The format for the date
+                        altInput: true,        // Display an alternative input with a user-friendly date format
+                        altFormat: "F j, Y",   // The alternative format for the date
+                        allowInput: true,      // Allow manual date input
+                        clickOpens: true       // Open the calendar when clicking on the field
+                  });
+            });
+      </script>
+
+
+
+
+</body>
+
+</html>
