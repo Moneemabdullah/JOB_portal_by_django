@@ -101,10 +101,9 @@ WSGI_APPLICATION = 'job.wsgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+     'default': dj_database_url.config(
+         default='postgresql://post_4fl3_user:h0UHd55lbknXcxCIhxe9ydIwkmZz658A@dpg-cur0ph3v2p9s73fkt45g-a.oregon-postgres.render.com/post_4fl3'
+     )
 }
 #for debug toolbar
 INTERNAL_IPS = [
