@@ -109,6 +109,10 @@ DATABASES = {
     }
 }
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://job-portal-xftu.onrender.com',
+]
+
 #for debug toolbar
 INTERNAL_IPS = [
     # ...
