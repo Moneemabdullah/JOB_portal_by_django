@@ -26,7 +26,7 @@ SECRET_KEY = 'etdq)uvq=t0rc&ams5_ovn6w8bcwknjj0u97*(#n^(76x*+dr1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1:8000, djobportal.herokuapp.com,0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1:8000, djobportal.herokuapp.com, 0.0.0.0']
 
 
 # Application definition
@@ -100,11 +100,15 @@ WSGI_APPLICATION = 'job.wsgi.application'
 #     }
 # }
 
+import dj_database_url
+
 DATABASES = {
-     'default': dj_database_url.config(
-         default='postgresql://post_4fl3_user:h0UHd55lbknXcxCIhxe9ydIwkmZz658A@dpg-cur0ph3v2p9s73fkt45g-a.oregon-postgres.render.com/post_4fl3'
-     )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
 #for debug toolbar
 INTERNAL_IPS = [
     # ...
